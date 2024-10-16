@@ -2,9 +2,15 @@
 port: 8000
 
 mappings:
-  - from: ":8080"
+  - type: tcp
+    from: ":8080"
     to: "localhost:80"
-  - from: ":8443"
+  - type: tcp
+    from: ":8443"
     to: "localhost:443"
-  - from: ":2222"
+  - type: tcp
+    from: ":2222"
     to: "localhost:22"
+  - type: udp
+    from: ":5333"
+    to: "8.8.8.8:53"
